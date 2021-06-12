@@ -1,0 +1,157 @@
+//colors
+$color_buddha_gold: #d19405;
+$color_husk: #bca05e;
+
+//fonts
+$font_0: Playfair Display;
+$font_1: serif;
+$font_2: EB Garamond;
+
+//urls
+$url_0: url(https://images.unsplash.com/photo-1611242320536-f12d3541249b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHJlZCUyMHNhdGlufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+
+//@extend-elements
+//original selectors
+//.preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3
+%extend_1 {
+	font-family: $font_0, $font_1;
+	background-image: $url_0;
+	background-clip: text;
+	opacity: .9;
+	text-transform: uppercase;
+}
+
+//original selectors
+//.preamble p, .explanation p, .participation p, .benefits p, .requirements p
+%extend_2 {
+	font-family: $font_2, $font_1;
+	max-width: 99%;
+	font-weight: bold;
+	font-style: italic;
+	text-align: justify;
+	opacity: 0.9;
+	margin-bottom: 1em;
+}
+
+//original selectors
+//.sidebar h3, .design-archives h3, .zen-resources h3
+%extend_3 {
+	font-family: $font_0, $font_1;
+	background-image: $url_0;
+	background-clip: text;
+	position: relative;
+	opacity: .9;
+	text-transform: uppercase;
+}
+
+//original selectors
+//.design-selection ul, .design-archives ul, .zen-resources ul
+%extend_4 {
+	list-style-type: ol;
+	list-style-type: lower-roman;
+	line-height: 2;
+	font-family: $font_2, $font_1;
+	max-width: 99%;
+	font-weight: bold;
+	font-style: italic;
+	opacity: 0.9;
+}
+
+//original selectors
+//ul a, .preamble a, .explanation a, .participation a, .benefits a, .requirements a
+%extend_5 {
+	text-decoration: none;
+	color: $color_buddha_gold;
+	text-shadow: 1px .5px #white;
+	opacity: 0.9;
+}
+
+
+.preamble {
+	h3 {
+		@extend %extend_1;
+	}
+	p {
+		@extend %extend_2;
+	}
+	a {
+		@extend %extend_5;
+	}
+}
+.explanation {
+	h3 {
+		@extend %extend_1;
+	}
+	p {
+		@extend %extend_2;
+	}
+	a {
+		@extend %extend_5;
+	}
+}
+.participation {
+	h3 {
+		@extend %extend_1;
+	}
+	p {
+		@extend %extend_2;
+	}
+	a {
+		@extend %extend_5;
+	}
+}
+.benefits {
+	h3 {
+		@extend %extend_1;
+	}
+	p {
+		@extend %extend_2;
+	}
+	a {
+		@extend %extend_5;
+	}
+}
+.requirements {
+	h3 {
+		@extend %extend_1;
+	}
+	p {
+		@extend %extend_2;
+		&:last-child {
+		font-size: .5em;
+		}
+	}
+	a {
+		@extend %extend_5;
+	}
+}
+.design-archives {
+	h3 {
+		@extend %extend_3;
+	}
+	ul {
+		@extend %extend_4;
+	}
+}
+.zen-resources {
+	h3 {
+		@extend %extend_3;
+	}
+	ul {
+		@extend %extend_4;
+	}
+}
+.sidebar h3 {
+	@extend %extend_3;
+}
+.design-selection ul {
+	@extend %extend_4;
+}
+ul a {
+	@extend %extend_5;
+	&:hover {
+		color: $color_husk;
+		text-shadow: 1px .5px $color_buddha_gold;
+		opacity: 0.9;
+	}
+}
